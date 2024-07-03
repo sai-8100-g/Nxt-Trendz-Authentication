@@ -35,22 +35,34 @@ class Login extends Component {
     this.setState({password: event.target.value})
   }
 
-  onSubmitForm = event => {
+  onSubmissionSuccess = () => {
+    const {history} = this.props
+    history.replace('/')
+  }
+
+  onFailureSubmission = errorMsg => {
+    this.setState({errorMsg})
+  }
+
+  onSubmitForm = async event => {
     event.preventDefault()
     const {userName, password} = this.state
-    const {history} = this.props
+    const userDetails = {userName, password}
+    const url = 'https://apis.ccbp.in/login'
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(userDetails),
+    }
 
-    if (userName === '' && password === '') {
-      this.setState({errorMsg: 'Please Enter Username And Password'})
-    } else if (userName === '') {
-      this.setState({errorMsg: 'Please Enter Username'})
-    } else if (password === '') {
-      this.setState({errorMsg: 'Please Enter Password'})
-    } else if (userName !== 'sai-8100' || password !== '6303619882') {
-      this.setState({errorMsg: "Username and Password didn't Match"})
+    const response = await fetch(url, options)
+    const data = await response.json()
+    if (data.ok) {
+      this.onSubmissionSuccess()
     } else {
-      this.setState({errorMsg: ''})
-      history.replace('/')
+      this.onFailureSubmission(data.error_msg)
     }
   }
 
