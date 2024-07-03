@@ -1,0 +1,39 @@
+.homeCard {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2%;
+}
+
+.homeInfo {
+  width: 60%;
+  padding: 5%;
+}
+
+.homeImg {
+  width: 40%;
+}
+
+.homeImg > img {
+  width: 80%;
+}
+
+.homeHeading {
+  font-size: 4vw;
+  color: #1e293b;
+}
+
+.homePara {
+  font-size: 1.5vw;
+  color: #0b69ff;
+}
+
+.shopNowBtn {
+  background-color: #0967d2;
+  font-size: 2vw;
+  padding: 2% 6%;
+  border: none;
+  border-radius: 4px;
+  color: #ffffff;
+}

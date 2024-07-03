@@ -1,0 +1,13 @@
+Header {
+  height: 5vh;
+}
+.productCard {
+  height: 95vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.productCard > img {
+  width: 20%;
+}

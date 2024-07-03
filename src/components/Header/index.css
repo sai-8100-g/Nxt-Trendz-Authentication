@@ -1,0 +1,50 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navLogo {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navLogo > img {
+  width: 40%;
+}
+
+.linksCard {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  width: 30%;
+  padding: 0px;
+  margin-right: 1%;
+}
+
+.navLink {
+  text-decoration: none;
+  font-weight: bold;
+  color: #1e293b;
+  font-size: 1.5vw;
+  font-family: 'Roboto';
+}
+
+.buttonLink {
+  text-decoration: none;
+}
+
+.buttonLink > button {
+  
+  background-color: #0b69ff;
+  border: none;
+  color: #ffffff;
+  border-radius: 4px;
+  font-size: 1.1vw;
+  font-weight: bold;
+}
+
+
+
+

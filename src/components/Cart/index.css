@@ -1,0 +1,14 @@
+Header {
+  height: 5vh;
+}
+
+.cartCard {
+  height: 95vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cartCard > img {
+  width: 20%;
+}
