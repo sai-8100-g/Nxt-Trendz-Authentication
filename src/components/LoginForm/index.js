@@ -47,21 +47,20 @@ class Login extends Component {
   onSubmitForm = async event => {
     event.preventDefault()
     const {userName, password} = this.state
-    const userDetails = {userName, password}
+    const userDetails = {username: userName, password}
     const url = 'https://apis.ccbp.in/login'
     const options = {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
       body: JSON.stringify(userDetails),
     }
 
     const response = await fetch(url, options)
     const data = await response.json()
-    if (data.ok) {
+    if (response.ok) {
       this.onSubmissionSuccess()
+      console.log('successfully submitted')
     } else {
+      console.log('failure')
       this.onFailureSubmission(data.error_msg)
     }
   }
